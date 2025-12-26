@@ -4,6 +4,6 @@ This is an LSPosed module that adds a Volume Control tile to the Quick Settings 
 Useful when you have broken volume buttons.
 That's it! 
 
-![Demo](Demo.gif)
+<img src="Demo.gif" width="250" />
 
 
