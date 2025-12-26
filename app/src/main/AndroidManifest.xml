@@ -26,6 +26,13 @@
             android:name="xposedscope"
             android:resource="@array/xposed_scope" />
 
+        <activity
+            android:name=".TransparentActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:launchMode="singleInstance" />
+
         <!-- 2. Quick Settings Tile Service -->
         <service
             android:name=".VolumeTileService"

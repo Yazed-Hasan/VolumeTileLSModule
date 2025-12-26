@@ -37,7 +37,10 @@ class VolumeTileService : TileService() {
         // This flag forces the system volume UI to show up
         audioManager.adjustVolume(AudioManager.ADJUST_SAME, AudioManager.FLAG_SHOW_UI)
 
-        // Close the Quick Settings panel
-        sendBroadcast(Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS))
+        // Close the Quick Settings panel using a dummy activity
+        // This avoids the SecurityException/crash with ACTION_CLOSE_SYSTEM_DIALOGS on Android 12+
+        val intent = Intent(this, TransparentActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivityAndCollapse(intent)
     }
 }
